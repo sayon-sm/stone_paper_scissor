@@ -2,6 +2,7 @@
 const STONE = 'STONE';
 const PAPER = 'PAPER';
 const SCISSOR = 'SCISSOR';
+let choice;
 
 const startGameBtn = document.getElementById('start-game-btn');
 let stat = true;
@@ -19,7 +20,8 @@ function compChoice(n) {
 }
 
 function game() {
-  const player = prompt('Enter your choice! \nSTONE \nPAPER \nSCISSOR');
+  choice = prompt('Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR');
+  const player = playerChoice(choice);
   const comp = compChoice(Math.random());
   console.log(player, comp);
 
