@@ -1,6 +1,5 @@
-/* to get user input
-and to validate the same 
-return player choice */
+/* to validate user input
+and take default as last resolve */
 
 function playerChoice(choice) {
   while (!choice) {
@@ -16,8 +15,8 @@ function playerChoice(choice) {
   else if (choice === '3' || choice === 'scissor' || choice === 'SCISSOR')
     choice = SCISSOR;
   else {
-    alert('Incorrct choice \nSTONE taken as default');
-    choice = STONE;
+    alert(`Incorrect choice \n${DEFAULT} taken as default`);
   }
+  choice = DEFAULT;
   return choice;
 }
