@@ -1,7 +1,8 @@
 /* to validate user input
 and take default as last resolve */
 
-function playerChoice(choice) {
+function playerChoice() {
+  choice = prompt('Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR');
   while (!choice) {
     alert('Enter a valid option');
     choice = prompt(

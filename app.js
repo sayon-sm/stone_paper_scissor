@@ -8,17 +8,16 @@ let choice;
 const startGameBtn = document.getElementById('start-game-btn');
 let stat = true;
 
-function compChoice(n) {
+function compChoice() {
+  const n = Math.random();
   if (n < 0.3) return SCISSOR;
   else if (n > 0.6) return PAPER;
   else return STONE;
 }
 
 function game() {
-  console.log('GAME IS STARTING ...');
-  choice = prompt('Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR');
-  const player = playerChoice(choice);
-  const comp = compChoice(Math.random());
+  const player = playerChoice();
+  const comp = compChoice();
   if (
     (player === STONE && comp === SCISSOR) ||
     (player === PAPER && comp === STONE) ||
@@ -38,6 +37,8 @@ function game() {
 }
 
 startGameBtn.addEventListener('click', () => {
-  stat ? game() : alert('GAME IS RUNNING !');
+  stat
+    ? (console.log('GAME IS STARTING ...'), game())
+    : alert('GAME IS RUNNING !');
   stat = false;
 });
