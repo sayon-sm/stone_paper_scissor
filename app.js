@@ -1,12 +1,12 @@
+'use strict';
 // global constants to omit typos
 const STONE = 'STONE';
 const PAPER = 'PAPER';
 const SCISSOR = 'SCISSOR';
 const DEFAULT = STONE;
-let choice;
 
 const startGameBtn = document.getElementById('start-game-btn');
-let stat = true;
+let verdict;
 
 function compChoice() {
   const n = Math.random();
@@ -24,21 +24,20 @@ function game() {
     (player === SCISSOR && comp === PAPER)
   ) {
     alert('PLAYER WON !');
+    verdict = 'PLAYER WON !';
   } else if (
     (player === STONE && comp === PAPER) ||
     (player === PAPER && comp === SCISSOR) ||
     (player === SCISSOR && comp === STONE)
   ) {
     alert('MOSNTER WON ! \nbetter luck next time');
+    verdict = 'MONSTER WON !';
   } else {
     alert("THAT'S A DRAW !");
+    verdict = "THAT'S A DRAW !";
   }
-  game();
+  // log the result to console
+  console.log(`Player: ${player} | Monster: ${comp} | Result: ${verdict}`);
 }
 
-startGameBtn.addEventListener('click', () => {
-  stat
-    ? (console.log('GAME IS STARTING ...'), game())
-    : alert('GAME IS RUNNING !');
-  stat = false;
-});
+startGameBtn.addEventListener('click', game);

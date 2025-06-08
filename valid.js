@@ -1,8 +1,11 @@
+'use strict';
 /* to validate user input
 and take default as last resolve */
 
 function playerChoice() {
-  choice = prompt('Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR');
+  let choice = prompt(
+    'Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR'
+  );
   while (!choice) {
     alert('Enter a valid option');
     choice = prompt(
@@ -17,7 +20,7 @@ function playerChoice() {
     choice = SCISSOR;
   else {
     alert(`Incorrect choice \n${DEFAULT} taken as default`);
+    choice = DEFAULT;
   }
-  choice = DEFAULT;
   return choice;
 }
