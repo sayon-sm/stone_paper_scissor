@@ -12,6 +12,8 @@ function playerChoice() {
       'Enter your choice! \n1. for STONE \n2. PAPER \n3. SCISSOR'
     );
   }
+  choice = choice.toUpperCase();
+  console.log(choice);
   if (choice === '1' || choice === 'stone' || choice === 'STONE')
     choice = STONE;
   else if (choice === '2' || choice === 'paper' || choice === 'PAPER')
